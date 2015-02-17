@@ -127,7 +127,6 @@ string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: please
 		return "";
 }
 
-// Private method implementation
 
 /** Search the array for a given name.
 	@param name The name to be found
