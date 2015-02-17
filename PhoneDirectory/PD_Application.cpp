@@ -15,14 +15,14 @@ void do_remove_entry(Phone_Directory&);
 void do_save(Phone_Directory&);
 
 int main(int argc, char* argv[])
-{
-	if (argc < 2) {
+{	
+	if (argc > 2) {
 		cerr << "Must specify the name of the data file"
 			" that contains the directory\n";
 		return 1;
 	}
 	Phone_Directory the_directory;
-	the_directory.load_data(argv[1]);
+	the_directory.load_data("C:/Users/Clinton/Source/Repos/HW022/PhoneDirectory/phone.dat");
 	process_commands(the_directory);
 }
 
@@ -93,6 +93,8 @@ void do_remove_entry(Phone_Directory& the_directory) // Exercise 1.8: please com
 	string numba = the_directory.lookup_entry(name);
 	if (numba!=""){
 		the_directory.remove_entry(name);
+		cout << "Deleted." << endl;
+		the_directory.save();
 	}
 	else
 		cout << "Entry does not exist." << endl;
