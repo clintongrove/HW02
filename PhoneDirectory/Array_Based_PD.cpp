@@ -115,12 +115,16 @@ void Phone_Directory::save()
 	*/
 string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: please complete the remove_entry() method - Ed/Kent
 {
-
-	// Hint: you can use the code below to shift names down in the directory to remove the selected entry specified by "index"
-	// for (int i = index; i < size - 1; i++)
-		// the_directory[i] = the_directory[i + 1];
-
-	return "";
+	int x = find(name);
+	if (x != -1){
+		std::string numba = the_directory[x].get_number();
+	 for (int i = x; i < size - 1; i++)
+		 the_directory[i] = the_directory[i + 1];
+	 size--;
+	 return numba;
+	}
+	else
+		return "";
 }
 
 // Private method implementation
