@@ -90,8 +90,12 @@ void do_remove_entry(Phone_Directory& the_directory) // Exercise 1.8: please com
 	string name;
 	cout << "Enter name: ";
 	getline(cin, name);
-	// Complete the rest of this function 
-	
+	string numba = the_directory.lookup_entry(name);
+	if (numba!=""){
+		the_directory.remove_entry(name);
+	}
+	else
+		cout << "Entry does not exist." << endl;
 }
 
 void do_save(Phone_Directory& the_directory)
